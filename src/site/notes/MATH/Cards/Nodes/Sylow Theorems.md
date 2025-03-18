@@ -48,8 +48,8 @@ By [[MATH/抽象代数II/Nodes/1.5 Sylow Theorem#^ne0n10\|1.5 Sylow Theorem#^ne0
 # Application
 
 The key idea of the following propositions are similar:
-- To show $G$ is simple:
-	- if $G$ has a subgroup $H$ of index $n$, then $G$ acting on $\{Hg:g\in G\}$ induces
+- To show $G$ is (not) simple:
+	- if $G$ has a subgroup $H$ of index $n$, then $G$ acting on $\{Hg:g\in G\}$ induces a normal subgroup $H_G\lhd G$ and $G/H_G\lesssim S_n$. If $G$ is simple, then $H_G=\{1\}$ and $G\lesssim S_n$.
 
 
 
