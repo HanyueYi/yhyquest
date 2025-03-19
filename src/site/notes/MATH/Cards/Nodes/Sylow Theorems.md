@@ -44,13 +44,32 @@ By [[MATH/抽象代数II/Nodes/1.5 Sylow Theorem#^ne0n10\|1.5 Sylow Theorem#^ne0
 `\end{proof}`
 
 
+> [!corollary]
+> Let $G$ be a finite group and let $P\in\mathrm{Syl}_p(G)$. Consider $G$ acting on $\Omega=\{N_G(P)g:g\in G\}$, which induces a map $\varphi:G\to\mathrm{Sym}(\Omega)$, then $\varphi(P)$ on $\Omega$ has only one fixed point $N_G(P)$.
+> 
+> Assume that $\varphi(P)$ acting on $\Omega$ has $k$ orbits, then for any $x\in N_G(P)-C_G(P)$, the number of fixed points of $\varphi(x)$ is $\leqslant k$.
+{ #x4xxhg}
+
+
+`\begin{proof}`
+i) If $N_G(P)xP=N_G(P)x$, then $P^x\leqslant N_G(P)$. Then $P^x=P$ and so $N_G(P)x=N_G(P)$.
+
+ii) Otherwise, there exist two fixed points of $\varphi(x)$ $N_G(P)a$ and $N_G(P)b$ in the same orbit of $\varphi(P)$, and so there exists $p\in P$ such that $N_G(P)a\varphi(p)=N_G(P)b$. On the other hand, we have $N_G(P)a\varphi(x)=N_G(P)a$ and $N_G(P)b\varphi(x)=N_G(P)b$. It deduces that 
+
+$$N_G(P)a\varphi(px)=N_G(P)b=N_G(P)a\varphi(p)=N_G(P)a\varphi(xp)$$
+
+and so $[p,x]\in P$ fixes $N_G(P)a$. It deduces that $[p,x]=1$ for all $p\in P$ and $x\in C_G(P)$, which is impossible. 
+`\end{proof}`
+
 
 # Application
 
 The key idea of the following propositions are similar:
 - To show $G$ is (not) simple:
-	- if $G$ has a subgroup $H$ of index $n$, then $G$ acting on $\{Hg:g\in G\}$ induces a normal subgroup $H_G\lhd G$ and $G/H_G\lesssim S_n$. If $G$ is simple, then $H_G=\{1\}$ and $G\lesssim S_n$.
-
+	- If $G$ has a subgroup $H$ of index $n$, then $G$ acting on $\{Hg:g\in G\}$ induces a normal subgroup $H_G\lhd G$ and $G/H_G\lesssim S_n$. If $G$ is simple, then $H_G=\{1\}$ and $G\lesssim S_n$. Thus, there is a lower bound of index of subgroups of $G$.
+	- Since $n_p=[G:N_G(P)]$ has lower bounder, we can determine $n_p$.
+	- If $n_p$ is large enough, the intersection of Sylow $p$-subgroups may not trivial. Let $A=P_i\cap P_j$ for example. Then consider the index/order of $C_G(A)$ or $N_G(A)$. 
+	- [[MATH/Cards/Nodes/Sylow Theorems#^56a6de\|#^56a6de]] describes the order of intersection of two Sylow $p$-subgroups. 
 
 
 > [!theorem]
@@ -90,7 +109,9 @@ Now we finish the proof.
 In [[MATH/Cards/Nodes/Sylow Theorems#^24a4c2\|#^24a4c2]] and [[MATH/Cards/Nodes/Sylow Theorems#^9a9397\|#^9a9397]], the key is to consider the intersection of two Sylow $p$-subgroups. Here is a more refined result, which is used to prove [[MATH/Cards/Nodes/Sylow Theorems#^f95b09\|#^f95b09]].
 
 > [!theorem]
-> Let $P_1,\cdots,P_n$ be all Sylow $p$-subgroups of $G$. If for any $i\neq j$ there is $|P_i:P_i\cap P_j|\geqslant p^d$, then $n\equiv 1\pmod{p^d}$. 
+> Let $P_1,\cdots,P_n$ be all Sylow $p$-subgroups of $G$. If for any $i\neq j$ there is $|P_i:P_i\cap P_j|\geqslant p^d$, then $n\equiv 1\pmod{p^d}$.
+{ #56a6de}
+
 
 `\begin{proof}`
 Let $\Omega=\{P_1,\cdots,P_n\}$ be the set of Sylow $p$-subgroups. Consider $P_n$ acts on $\{P_1,\cdots,P_{n-1}\}$ by conjugation. Note that $P_i^x\neq P_n$ for any $x\in P_n$, so the action is well-defined. Let $H_i=P_n{}_{P_i}$ be the point stabilizer of $P_i$, then $H\leqslant N_G(P_i)\cap P_n$. Since $N_G(P_i)$ has only one Sylow $p$-subgroup $P_i$, there is $N_G(P_i)\cap P_n\leqslant P_i$ and so $N_G(P_i)\cap P_n=P_i\cap P_n$. Hence, $|P_n:P_n\cap P_i|=o(P_i)\geqslant p^d$ equals to the length of the orbit containing $P_i$ and so each orbit length is $kp^d$ for some $k\in \mathbb{N}_+$. Therefore, $p^d\mid n-1$ and $n\equiv 1\pmod{p^d}$.
@@ -107,36 +128,3 @@ Assume that $G$ is simple. Note that $n_3\in\{4,16\}$. If $n_3=4$, $G$ has a sub
 
 By [[MATH/Cards/Nodes/Sylow Theorems#^qes1qo\|#^qes1qo]], $P_i\cap P_j$ is a maximal subgroup of $P_i$, so $N_{P_i}(P_i\cap P_j)=P_i$. It deduces that $N_G(P_i\cap P_j)\geqslant\left\langle P_i,P_j\right\rangle$. Since $N_G(P_i\cap P_j)$ has at least $4$ Sylow $3$-subgroups, we have $|N_G(P_i\cap P_j)|\geqslant 4\cdot N_{N_G(P_i\cap P_j)}(P_i)\geqslant 4\cdot 3^3=108$ and $[G:N_G(P_i\cap P_j)]\leqslant 4$. Then $G$ has a subgroup of index $\leqslant 4$ and $G\lesssim S_4$, which is impossible.
 `\end{proof}`
-
-
-> [!proposition]
-> Group of order $3^3\cdot 5\cdot 7$ is not simple.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-![Pasted image 20250317195643.png|500](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250317195643.png)
-
-
-![Pasted image 20250317195705.png|500](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250317195705.png)
-
-![Pasted image 20250317195726.png|500](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250317195726.png)
-
-
-![Pasted image 20250317195740.png|500](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250317195740.png)
-
