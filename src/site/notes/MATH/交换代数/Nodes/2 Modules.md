@@ -99,6 +99,8 @@ Let $N=\left\langle x_1,\cdots,x_n\right\rangle_A\subseteq M$. Then the composit
 
 
 **Remark.** Any exact sequence can be split into short exact sequences. Namely, given 
+{ #4xqpdj}
+
 
 $$\cdots\to M_{i-2}\stackrel{f_{i-1}}{\to} M_{i-1}\stackrel{f_i}{\to} M_i\stackrel{f_{i+1}}{\to} M_{i+1}\stackrel{f_{i+2}}{\to}M_{i+2}\to \cdots,$$
 
@@ -273,6 +275,8 @@ which yields $g((a,m))=g((1,am))$ and so $a\otimes m=1\otimes am$.
 > Let $M_1,\cdots,M_r$ be $A$-module. Then there exists $(T,g)$ where $g:M_1\times \cdots\times M_r\to T$ is a multilinear map such that for any $A$-module $P$ and multilinear map $f:M_1\times \cdots\times M_r\to P$, there exists unique $f$ such that the diagram commutes. 
 > 
 > ![Pasted image 20250317200619.png|250](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250317200619.png)
+{ #ml3hwi}
+
 
 `\begin{proof}`
 Similar to [[MATH/交换代数/Nodes/2 Modules#^aa5afc\|#^aa5afc]]. 
@@ -321,6 +325,8 @@ Define $(M\otimes_AN)\times P\to M\otimes _A(N\otimes _BP),(t,z)\mapsto f_z(t)$,
 
 > [!corollary]
 > Suppose $\sum_{i=1}^n x_i\otimes y_i=0$ in $M\otimes_AN$, with $x_i\in M,y_i\in N$. Then there exists some finitely generated submodule $M_0\subseteq M$ and $N_0\subseteq N$ such that $\sum_{i=1}^n x_i\otimes y_i=0$ in $M_0\otimes_A N_0$. Remark that $M_0\otimes N_0\to M\otimes N$ is not injective, see [[MATH/交换代数/Nodes/2 Modules#Strange Things about Tensor Product\|#Strange Things about Tensor Product]] for example.
+{ #6zw2e4}
+
 
 `\begin{proof}`
 Since $\sum_{i=1}^n x_i\otimes y_i=0$ in $M\otimes_AN =C/D$ with $C=A^{M\times N}$, there is $\sum_{i=1}^n x_i\otimes y_i\in D$. Then 
@@ -400,3 +406,143 @@ Finally, check $\psi$ and $\phi$ are inverse each other.
 $$\mathrm{Hom}(\mathbb{Z}/12\mathbb{Z}\otimes \mathbb{Z}/2\mathbb{Z},\mathbb{Z}/6\mathbb{Z})\simeq \mathrm{Hom}(\mathbb{Z}/12\mathbb{Z},\mathrm{Hom}(\mathbb{Z}/2\mathbb{Z},\mathbb{Z}/6\mathbb{Z}))$$
 
 where LHS $\simeq\mathrm{Hom}(\mathbb{Z}/2\mathbb{Z},\mathbb{Z}/6\mathbb{Z})\simeq \mathbb{Z}/2\mathbb{Z}$ and RHS $\simeq \mathrm{Hom}(\mathbb{Z}/12\mathbb{Z},\mathbb{Z}/2\mathbb{Z})\simeq \mathbb{Z}/2\mathbb{Z}$. 
+
+> [!proposition]
+> Let $M'\to M\to M''\to 0(*)$ be a right exact sequence of $A$-modules. Let $N$ be any $A$-module. Then the sequence 
+> 
+> $$M'\otimes_A N\stackrel{\widetilde f}{\to} M\otimes_A N\stackrel{\widetilde g}{\to} M''\otimes_A N\to 0\tag{**}$$
+> 
+> is still right exact.
+
+`\begin{proof}`
+Note that it is easy to see $\widetilde g$ is surjective. It remains to check $\ker \widetilde g\simeq \mathrm{im} \widetilde f$. By [[MATH/交换代数/Nodes/2 Modules#^jj28ws\|#^jj28ws]], it suffices to show for any $A$-module $P$, 
+
+$$0\to\mathrm{Hom}(M'\otimes N,P)\to \mathrm{Hom}(M\otimes N,P)\to \mathrm{Hom}(M''\otimes N,P)$$
+
+is left exact. By [[MATH/交换代数/Nodes/2 Modules#^60fa98\|#^60fa98]], it is equivalent to show 
+
+$$0\to \mathrm{Hom}(M',\mathrm{Hom}(N,P))\to \mathrm{Hom}(M,N\otimes P)\to \mathrm{Hom}(M'',N\otimes P)$$
+
+is left exact. By [[MATH/交换代数/Nodes/2 Modules#^jj28ws\|#^jj28ws]], we have done. 
+`\end{proof}`
+
+**Remark.** 
+- $\text{right}\to 0$ is necessary. For example, $0\to \mathbb{Z} \stackrel{\times 2}{\to} \mathbb{Z}$ is exact, but after tensor $\mathbb{Z}/2\mathbb{Z}$ we get $0\to \mathbb{Z}/2\mathbb{Z}\to 0$, which is not exact. 
+- a left $0\to$ does not product similar result. For example, $0\to \mathbb{Z}\stackrel{\times 2}{\to}\mathbb{Z}\to \mathbb{Z}/2\mathbb{Z}\to 0$ is exact, but after tensor $\mathbb{Z}/2\mathbb{Z}$ we get $0\to \mathbb{Z}/2\mathbb{Z}\stackrel{\times 2}{\to}\mathbb{Z}/2\mathbb{Z}\to Z/2\mathbb{Z}\to 0$ is right exact but not left exact. 
+{ #g6xwy9}
+
+
+> [!definition]
+> We say an $A$-module is a *flat $A$-module*, if for any exact sequence 
+> 
+> $$\cdots\to M_{i-1}\to M_i\to M_{i+1}\to \cdots,\tag{*}$$
+> 
+> the tensor product sequence $(*)\otimes N$ is still exact. 
+{ #8m15t3}
+
+
+**Examples.** 
+- $\mathbb{Z}/2\mathbb{Z}$ is not flat by [[MATH/交换代数/Nodes/2 Modules#^g6xwy9\|it]]. 
+- The $A$-module $A$ is a flat $A$-module.
+- $A^{\oplus n}$ is flat $A$-module. 
+
+> [!proposition]
+> Let $N$ be a $A$-module. TFAE:
+> - $N$ is flat.
+> - For any short exact sequence $0\to M'\to M\to M''\to 0(*)$, $(*)\otimes_A N$ is still short exact. 
+> - For any injective map $f:M'\hookrightarrow M$, $f\otimes 1$ is also injective.
+> - For any injective map $f:M'\hookrightarrow M$ with $M',M$ finitely generated, $f\otimes 1$ is still injective.
+
+`\begin{proof}`
+i)<->ii) is trivial as [[MATH/交换代数/Nodes/2 Modules#^4xqpdj\|each long exact sequence can be split into short exact sequence]]. 
+
+iii)->iv) is easy. 
+
+i)=ii)->iii) by considering $0\to M'\to M$ exact. 
+
+iii)->ii) When iii) holds, $\otimes$ preserves right exactness. Furthermore, $\otimes_AN$ preserves left exactness by [[MATH/交换代数/Nodes/2 Modules#^8m15t3\|#^8m15t3]] and so for short exact sequence.
+
+It remains to show iv)->iii). Suppose $u=\sum_{i=1}^n x_i'\otimes y_i\in \ker(M'\otimes N\to M\otimes N)$, that is, $f(u)=\sum_{i=1}^n f(x_i')\otimes y_i=0$. We aim to show $u=0$. Let $M_0'=\left\langle x_1',\cdots,x_n'\right\rangle_A\subseteq M'$. Let $u_0=\sum_{i=1}^n x_i'\otimes y_i$ be an element in $M_0'\otimes N$. Remark that we do not know if $u_0$ is also zero, as $M_0\otimes N$ may not a submodule of $M'\otimes N$ by [[MATH/交换代数/Nodes/2 Modules#Strange Things about Tensor Product\|#Strange Things about Tensor Product]]. 
+
+[[MATH/交换代数/Nodes/2 Modules#^6zw2e4\|#^6zw2e4]] says that for $\sum_{i=1}^nf(x_i')\otimes y_i=0\in M\otimes N$, there exists finitely generated submodule $M_0\subseteq M$ containing $f(M_0')$ and finitely generated submodule $N_0\subseteq N$ such that $\sum_{i=1}^n f(x_i')\otimes y_i=0$ in $M_0\otimes N_0$. So in particular, from injective map $f:M'\hookrightarrow M$, we have injective map $f:M_0'\hookrightarrow M_0$. 
+
+Since $M_0'$ and $M_0$ are finitely generated, by iv) we have $M_0'\otimes N\to M_0\otimes N$ is injective. Note that $\sum_{i=1}^n f(x_i)\otimes y_i=0$ in $M_0\otimes N$, then we have $u_0=\sum_{i=1}^n x_i'\otimes y_i$ is $0$ in $M_0'\otimes N$. It deduces that $\sum_{i=1}^n x_i'\otimes y_i=0$ in $M'\otimes N$. 
+`\end{proof}`
+
+> [!theorem] Text-Ex. 2.20.
+> Let $f:A\to B$ be a ring homomorphism and let $N$ be a flat $A$-module. Then $N_B=N\otimes _AB$ is a flat $B$-module. Remark that $N_B$ in general is not flat $A$-module. 
+
+`\begin{proof}`
+Let $M'\hookrightarrow M$ be an injective map of $B$-modules. It remains to show $M'\otimes_BN_B\to M\otimes _BN_B$ is still injective. But 
+
+$$M'\otimes_B N_B=M'\otimes_B(B\otimes_AN)=(M'\otimes_B B)\otimes _AN=M'\otimes_A N$$
+
+and then the map $M'\otimes_A N\to M\otimes_A N$ is injective by $N$ being a flat $A$-module.
+`\end{proof}`
+
+
+**Remark.** Let $f:\mathbb{Z}\to \mathbb{Z}/2\mathbb{Z}$ and $N=\mathbb{Z}$. But $N_B=\mathbb{Z}/2\mathbb{Z}$ is not flat over $\mathbb{Z}$. 
+
+# Algebra and Tensor Product of Algebra
+
+> [!definition]
+> Given a ring homomorphism $f:A\to B$, we say $B$ is an $A$-algebra. Note that $B$ has an $A$-module structure which is compatible with ring struction on $B$, that is, $(f(a)b)c=f(a)(bc)$. 
+
+**Examples.**
+- Any ring is a $\mathbb{Z}$-algebra.
+- Field extension $E/K$ is a $K$-algebra with $K\hookrightarrow E$.
+
+> [!definition]
+> Given $f:A\to B$ and $g:A\to C$, a ring homomorphism $h:B\to C$ is called a homomorphism of $A$-algebra if it is also a $A$-module homomorphism. Equivalently, $h$ is an $A$-algebra homomorphism iff the following diagram commute.
+> 
+> ![Pasted image 20250324201824.png|160](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250324201824.png)
+
+`\begin{proof}`
+i)->ii). ii) means $h(f(a))=g(a)$. Note that if i) holds, then
+
+$$h(f(a))=h(a\cdot 1_B)=a\cdot h(1_B)=a\cdot 1_C=g(a).$$
+
+ii)->i) It suffices to show $h(ab)=ah(b)$. By
+
+$$h(ab)=h(f(a)b)=h(f(a))h(b)=g(a)h(b)=ah(b)$$
+
+we finish the proof.
+`\end{proof}`
+
+**Example.** Recall given field extensions $E/K$ and $F/K$, $E$ and $F$ are $K$-algebras and $f:E\to F$ is a field homomorphism. $f$ is also a homomorphism of $K$-vector spaces iff $f$ is a homomorphism between $k$-algebra iff $f:E\to F$ is a homomorphism such that $f(k)=k$ for any $k\in K$ iff the diagram commutes. 
+
+![Pasted image 20250324202837.png|170](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250324202837.png)
+
+> [!definition]
+> - Say $f:A\to B$ is a finite morphism of rings, if $B$ is a finitely generated $A$-module. In this case, say $B$ is a finite $A$-algebra.
+> - Say $f:A\to B$ is of finite type, if there exists $x_1,\cdots,x_n\in B$ such that any $b\in B$ can be written as a polynomial in $x_1,\cdots,x_n$ with coefficient in $f(A)$. It is equivalent to there exists surjective map $A[t_1,\cdots,t_n]\twoheadrightarrow B, t_i\to x_i$. In this case, say $B$ is a finitely generated $A$-algebra. 
+>   
+> So finite $A$-algebra is a finitely generated $A$-algebra.
+
+**Examples.**
+- $\mathbb{Q}\to \mathbb{Q}(i)$ is a finite $\mathbb{Q}$-algebra
+- $\mathbb{Q}\to \mathbb{Q}[x,y]$ is of finite type
+- $\mathbb{Q}\to \mathbb{Q}[x,y]/(x^2+y^2)$ is of finite type
+- $\mathbb{Q}\to \mathbb{Q}[x,y]/(x^2,y^2)$ is of finite type
+
+> [!definition]
+> For a ring $A$, we say it is finitely generated if it is finitely generated as $\mathbb{Z}$-algebra. 
+
+**Example.** $A=\mathbb{Z}[x,y]/(x^2+y^2)$
+
+**a Construction on Page 31.** Let $f:A\to B$ and $g:A\to C$ be two ring homomorphisms. Let $D=B\otimes _AC$. Claim that we can define ring structure on $D$ and make it an $A$-algebra. 
+
+`\begin{proof}`
+Consider $B\times C\times B\times C\to D,(b,c,b',c')\mapsto bb'\otimes cc'$. By [[MATH/交换代数/Nodes/2 Modules#^ml3hwi\|#^ml3hwi]] above induces an $A$-linear map 
+
+![Pasted image 20250324204449.png|270](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250324204449.png)
+
+By [[MATH/交换代数/Nodes/2 Modules#^aa5afc\|#^aa5afc]], this is the same as an $A$-bilinear map $\mu:D\times D\to D$ with $\mu(b\otimes c,b'\otimes c')=bb'\otimes cc'$. One can check this $\mu$ (used as multiplication) is compatible with $+$ on $D$, giving $D$ a ring structure. 
+
+Define $A\to D$ by $a\mapsto f(a)\otimes 1$. Note that $f(a)\otimes 1=a\cdot 1_V\otimes 1_C=1_B\otimes a\cdot 1_C=1\otimes g(a)$. It is easy to see it is a homomorphism of rings. 
+
+**Remark.** 
+- [[Pasted image 20250324205212.png|page 31]] of [[Atiyah - 1969 - Introduction to commutative algebra.pdf|Atiyah]] is not correct, as $\mathbb{Z}\to \mathbb{Z}\otimes \mathbb{Z}$ is not a ring homomorphism.
+- In fact there is a commutative diagram of ring homomorphism
+  
+  ![Pasted image 20250324222015.png|160](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250324222015.png)
