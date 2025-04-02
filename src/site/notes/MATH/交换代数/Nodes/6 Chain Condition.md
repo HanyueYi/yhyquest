@@ -89,6 +89,8 @@ where some terms may repeat. Since $M'$ and $M''$ are Artinian, these two chains
 
 > [!proposition]
 > Let $A$ be a Noetherian/Artinian ring, and let $M$ be a finitely generated $A$-module. Then $M$ is a Noetherian/Artinian $A$-module.
+{ #8ezl57}
+
 
  `\begin{proof}`
  See [[MATH/抽象代数II/Nodes/2.3 Noetherian Rings and Modules#^gmjk45\|2.3 Noetherian Rings and Modules#^gmjk45]].
@@ -97,6 +99,8 @@ where some terms may repeat. Since $M'$ and $M''$ are Artinian, these two chains
 > [!proposition]
 > Let $A$ be a Noetherian (rep. Artinian) ring, and let $\alpha\subseteq A$ be an ideal. Then $A/\alpha$ is a Noetherian (rep. Artinian) ring.
 > 
+{ #7j4294}
+
 
 `\begin{proof}`
 Note that ideals of quotient ring are quotient of ideals.

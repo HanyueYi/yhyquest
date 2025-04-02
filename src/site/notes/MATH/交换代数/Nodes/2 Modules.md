@@ -23,6 +23,8 @@ Similarly, given $v:N\to N'$, it induces a homomorphism $\mathrm{Hom}(M,N)\to \m
 > [!proposition]
 > $M$ is a finitely generated $A$-module iff there exists an surjective $A^n\twoheadrightarrow M$ iff $M$ is a quotient module of $A^n$.
 
+# Nakayama Lemma
+
 > [!proposition]
 > Suppose $M$ is a finitely generated $A$-module, and $\alpha\subseteq A$ is an ideal. Let $\phi:M\to M$ be an endomorphism such that $\phi(M)\subseteq\alpha M$. Then $\phi$ satisfies an equation of form 
 > 
@@ -53,7 +55,7 @@ on $M$ with $a_i\in \alpha$. Let $x=1+a_1+\cdots+a_n$, then $xM=0$.
 `\end{proof}`
 
 
-> [!proposition] Nakeyame lemma
+> [!proposition] Nakayama lemma
 > Let $M$ be a finitely generated $A$-module, and let $\alpha\subseteq A$ be an ideal with $\alpha\subseteq\mathrm{Jac}(A)$. If $\alpha M=M$, then $M=0$.
 { #c2a5d0}
 
@@ -106,6 +108,8 @@ $$\cdots\to M_{i-2}\stackrel{f_{i-1}}{\to} M_{i-1}\stackrel{f_i}{\to} M_i\stackr
 
 then we get $0\to \mathrm{im} f_i\to M_i\to M_i/\mathrm{im} f_i\to 0$ and $0\to \mathrm{im} f_{i+1}\to M_{i+1}\to M_{i+1}/\mathrm{im} f_{i+1}\to 0$, where $M_i/\mathrm{im} f_i=M_i/\ker f_{i+1}\simeq\mathrm{im} f_{i+1}$.
 
+## Hom Functor
+
 > [!proposition]
 > - Let $M'\stackrel{u}{\to}M\stackrel{ v}{\to}M''\to 0$ $(*)$ be a sequence of $A$-module homomorphism. Then it is exact iff for any $A$-module $N$, the induced sequence
 >   
@@ -149,7 +153,7 @@ is exact. Since $\iota':\ker v\to N$ is an element of $\mathrm{Hom}(\ker v,N)$ a
 - "$\to 0$" in $(*)$ is necessary. For example, consider $\mathbb{Z}\stackrel{\times 0}{\to}\mathbb{Z}\stackrel{\times 2}{\to}\mathbb{Z}$ is exact but right exact. Then $\mathrm{Hom}(\mathbb{Z},\mathbb{Z})\stackrel{\times 2}{\to} \mathrm{Hom}(\mathbb{Z},\mathbb{Z})\stackrel{\times 0}{\to}\mathrm{Hom}(\mathbb{Z},\mathbb{Z})$. 
 - "$0\to$" on LHS of $(*)$ is useless, as it cannot add "$\to 0$" to $(**)$. Consider $0\to \mathbb{Z}\stackrel{\times 2}{\to}\mathbb{Z}\to \mathbb{Z}/2\mathbb{Z}\to 0$. Apply $\mathrm{Hom}(*,\mathbb{Z})$, then $0\to 0\to\mathbb{Z}\stackrel{\times 2}{\to}\mathbb{Z}\to 0$ is only left exact. 
 
-# Snake Lemma
+## Snake Lemma
 
 > [!proposition] snake lemma
 > Consider a commutative diagram where both rows are short exact.
@@ -312,7 +316,8 @@ Here we use the isomorphism $(\mathbb{Z}\cdot 2e)\otimes_\mathbb{Z}(\mathbb{Z}/2
 
 **Remark.** It has been defined in [[MATH/抽象代数III/Nodes/2 250304#^559amp\|2 250304#^559amp]], but I write it again.
 
-**Text-Ex. 2.15.** Let $A,B$ be rings. Let $M$ be an $A$-module, $P$ be a $B$-module and let $N$ be a $(A,B)$-bimodule. Then $M\otimes _AN$ is a $B$-module and $N\otimes_BP$ is an $A$-module, and we have an isomorphism of $(A,B)$-bimodule. 
+> [!proposition] Text-Ex. 2.15.
+> Let $A,B$ be rings. Let $M$ be an $A$-module, $P$ be a $B$-module and let $N$ be a $(A,B)$-bimodule. Then $M\otimes _AN$ is a $B$-module and $N\otimes_BP$ is an $A$-module, and we have an isomorphism of $(A,B)$-bimodule. 
 
 `\begin{proof}`
 It is easy to check $M\otimes _AN$ is a $B$-module and $N\otimes_BP$ is an $A$-module. The proof of isomorphism of $(A,B)$-bimodule is similar to [[MATH/交换代数/Nodes/2 Modules#^9968ad\|#^9968ad]], ii). 
@@ -546,3 +551,44 @@ Define $A\to D$ by $a\mapsto f(a)\otimes 1$. Note that $f(a)\otimes 1=a\cdot 1_V
 - In fact there is a commutative diagram of ring homomorphism
   
   ![Pasted image 20250324222015.png|160](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250324222015.png)
+
+**Example (strange $\otimes$).** Define $D=\mathbb{Q}(i)\otimes_\mathbb{Q} \mathbb{Q}(i)$ is not a domain, because 
+
+$$(1\otimes i+i\otimes 1)(1\otimes i-i\otimes 1)=1\otimes(-1)-(-1)\otimes 1=0.$$
+
+To see the above two elements are nonzero, notice that $D=(\mathbb{Q}1\oplus\mathbb{Q} i)\otimes (\mathbb{Q}1\oplus \mathbb{Q}i)$ is a vector space over $\mathbb{Q}$ and 
+
+$$\begin{aligned}
+D&=(\mathbb{Q}1\oplus\mathbb{Q} i)\otimes (\mathbb{Q}1\oplus \mathbb{Q}i)\\&=\mathbb{Q}1\otimes \mathbb{Q}1\oplus \mathbb{Q} i\otimes \mathbb{Q}1\oplus\mathbb{Q}1\otimes \mathbb{Q}i\oplus\mathbb{Q}i\otimes \mathbb{Q}i\\
+&\simeq \mathbb{Q}\oplus \mathbb{Q}\oplus \mathbb{Q}\oplus \mathbb{Q}
+\end{aligned}$$
+
+where $\mathbb{Q}1\otimes_\mathbb{Q}\mathbb{Q}1\simeq \mathbb{Q}\otimes _\mathbb{Q} \mathbb{Q}=\mathbb{Q}$. Hence $D$ is a $4$-dimensional $\mathbb{Q}$-v.s. with a basis $1\otimes 1,1\otimes i,i\otimes 1,i\otimes i$. So the above two elements are nonzero. 
+
+**Examples.**
+- $\mathbb{C}[x]\otimes \mathbb{C}[y]\simeq \mathbb{C}[x,y]$. Each element on LHS has a unique expression as $\mathbb{C}[x],\mathbb{C}[y]$ are linear vector spaces, then $\varphi:\sum a_{ij}x^i\otimes y^j\mapsto \sum a_{ij}x^iy^j$ is well-defined. 
+- $\mathbb{C}[\![x]\!]\otimes_\mathbb{C} \mathbb{C}[\![y]\!]\neq \mathbb{C}[\![x,y]\!]$. The problem is, $\{x^n:n\geqslant 0\}$ is NOT a basis of $\mathbb{C}[\![x]\!]$. "For example", consider $f=\sum_{i=0}^n (xy)^i$ and $\sum_{i=0}^n x^i\otimes y^i\notin\text{LHS}$. 
+
+**Example.** Let $\alpha\subseteq A$ be an ideal, and let $M$ be an $A$-module. Consider short exact sequence $0\to\alpha\to A\to A/\alpha\to 0$. Tensor with $M$ and we get a right exact sequence 
+
+$$\alpha\otimes_A M\stackrel{f }{\to}M\to A/\alpha\otimes M\to 0.$$
+
+Recall the notation $\alpha M=\{\sum_{i=1}^N a_i m_i:a_i\in \alpha,m_i\in M\}\subseteq M$. It is easy to see $\mathrm{im} f=\alpha M$ (but in general $\alpha\otimes M\to \alpha M$ is not injective). So we get a short exact sequence $0\to \alpha M\hookrightarrow M\to A/\alpha\otimes _A M\to 0$. So $M/\alpha M\simeq (A/\alpha)\otimes_A M$. 
+
+**Example.** Let $\alpha=(2)\subseteq \mathbb{Z}$, and let $M=\mathbb{Z}/2\mathbb{Z}$. Note that $0\neq (2\mathbb{Z})\otimes _\mathbb{Z} \mathbb{Z}/2\mathbb{Z}$ and $(2)\cdot \mathbb{Z}/2\mathbb{Z}=0$. 
+
+> [!lemma] a useful fact
+> Let $\alpha\subseteq A$ be an ideal. Let $M,N$ be two $A/\alpha$-modules, then one have an $A$-module isomorphism 
+> 
+> $$M\otimes _{A/\alpha} N\simeq M\otimes _AN.$$
+
+**Remark.** For general $A\to B$ and two $B$-modules $X$ and $Y$, $X\otimes_B Y\not\simeq X\otimes_A Y$. 
+
+`\begin{proof}`
+Consider
+
+![Pasted image 20250331173925.png|220](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250331173925.png)
+
+Define $g_A:M\times N\to M\otimes _A N,(m,n)\mapsto m\otimes_A n$, then $g_A$ is $A/\alpha$-bilinear and there exists $f'':M\otimes_{A/\alpha}N\to M\otimes _AN$ such that $f''\circ g_{A}=g_{A/\alpha}$. Similarly, define $g_{A/\alpha}:M\times N\to M\otimes_{A/\alpha}N,(m,n)\mapsto m\otimes_{A/\alpha}n$, then $g_{A/\alpha}$ is $A$-bilinear and there exists $f':M\otimes _{A/\alpha}N\to M\otimes_A N$ such that $f'\circ g_{A/\alpha}=g_{A}$. So $f'=f''^{-1}$ and so $M\otimes_{A/\alpha}N\simeq M\otimes _A N$. 
+`\end{proof}`
+
