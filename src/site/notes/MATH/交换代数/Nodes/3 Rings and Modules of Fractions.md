@@ -98,6 +98,8 @@ By [[MATH/交换代数/Nodes/3 Rings and Modules of Fractions#^092787\|#^092787]
 
 > [!proposition]
 > Let $M,N$ be $A$-modules. Then $S^{-1}M\otimes_{S^{-1}A}S^{-1}N\simeq S^{-1}(M\otimes_A N)$. 
+{ #udklm4}
+
 
 `\begin{proof}`
 By [[MATH/交换代数/Nodes/3 Rings and Modules of Fractions#^d61f0b\|#^d61f0b]], we have 
@@ -142,6 +144,8 @@ Consider $M\to M_m=M\otimes_A (A-m)^{-1}A,x\mapsto x\otimes 1$. Since $M_m=0$, $
 > - $\phi_m:M_m\to M_m$ is injective for all maximal ideal $m$.
 > 
 > Similar statements hold after replacing "injective" by "surjective" or "bijective". 
+{ #766550}
+
 
 `\begin{proof}`
 i)->ii) Recall $M_0\simeq M\otimes_A A_p$ and by [[MATH/交换代数/Nodes/3 Rings and Modules of Fractions#^8p663h\|#^8p663h]].
@@ -159,8 +163,82 @@ iii)->i) Let $P=\ker \phi$. Then $0\to P\to M\to N$ is left exact. For any maxim
 > - $M_m$ is a flat $A_m$-module for all maximal ideal $m$. 
 
 `\begin{proof}`
+i)->ii) Given injective homomorphism $X\hookrightarrow Y$ of $A_p$-module, we aim to show $X\otimes_{A_p}M_p\to Y\otimes_{A_p}M_p$ is injective. Note that $X\otimes_{A_p} M_p=X\otimes_{A_p}(A_p\otimes_A M)=X\otimes _A M$ and $X\otimes _A M\to Y\otimes_A M$ is injective. Now we finish the proof. 
+
+ii)->iii) is trivial. 
+
+iii)->i) Suppose $N\hookrightarrow P$ is an injective homomorphism of $A$-modules. By [[MATH/交换代数/Nodes/3 Rings and Modules of Fractions#^766550\|#^766550]], it suffices to check injective after localization at any maximal ideal $m$. By [[MATH/交换代数/Nodes/3 Rings and Modules of Fractions#^udklm4\|#^udklm4]], it is same as $N_m\otimes_{A_m} M_m\to P_m\otimes_{A_m}M_m$, which is injective by iii).
+`\end{proof}`
 
 
+# Extended and Contracted Ideals in $S^{-1}A$
+
+Let $f:A\to S^{-1}A,a\mapsto a/1$. Let $C$ be the set of contracted ideals in $A$, that is, 
+
+$$C=\{f^{-1}(\beta)=\beta^c:\beta\subseteq S^{-1}A\text{ is an ideal}\}.$$
+
+Let $E$ be the set of extended ideals in $S^{-1}A$, that is, 
+
+$$E=\{\alpha^e=\left\langle \alpha\right\rangle _{S^{-1}A}:\alpha\subseteq A\text{ is an ideal}\}.$$
+
+**Fact.** $\alpha^e=S^{-1}\alpha=\alpha\otimes_A S^{-1}A$. 
 
 
+> [!proposition]
+> Part 1:
+> - If $\beta\subseteq S^{-1}A$ is an ideal, then $\beta=(\beta^c)^e$, that is, $\beta$ is an extended ideal.
+> - Let $\alpha\subseteq A$ be an ideal, then $\alpha^{ec}=\cup_{s\in S}(\alpha:s)$. Also $\alpha^e=S^{-1}A$ iff $\alpha^{ec}=A$ iff $\alpha\cap S\neq \emptyset$. Remark that $(\alpha:s)=\{x\in A:xs\in \alpha\}$.
+> - $\alpha\in C$ iff $\forall s\in S$, $s$ is not zero divisor in $A/\alpha$ iff $(\alpha:s)=\alpha$ for all $s\in S$. 
+> 
+> Part 2:
+> - $P\to S^{-1}P$ gives a $1$-$1$ correspondence between 
+>   
+>   $$\{\text{prime ideals of }p\subseteq A,p\cap S=\emptyset\}\leftrightarrow\{\text{prime ideals of }S^{-1}A\}.$$
+>   
+> - The operation $S^{-1}$ commutes with $+$, $\times$, $\cap$, radical. 
+
+`\begin{proof}`
+i) By definition, $\beta^{ce}\subseteq \beta$. On the other hand, for any $x/s\in\beta$, one have $x/1=s\cdot x/s\in \beta$ and $x\in\beta^c$. It deduces that $x/1\in \beta^{ce}$ and so $x/s=1/s\cdot x/1\in \beta^{ce}$. Now we finish the proof.
+
+ii) Note that $x\in \alpha^{ec}=(S^{-1}\alpha)^c$ iff $x/1=a/s$ for some $a\in \alpha$ and $s\in S$ iff $(xs-a)t=0$ for some $t\in S$. It yields that $xst=at\in \alpha$ as $a\in \alpha$ and $x\in (\alpha:st)$. Thus, $\alpha^{ec}\subseteq \cup_{s\in S}(\alpha:s)$. Conversely, if $x\in (\alpha:s)$, then $sx=a\in \alpha$ and $x=a/s\in S^{-1}\alpha$ and so $x\in (\alpha^e)^c$. 
+
+Finally,
+- $\alpha^{ec}=A$ iff $1\in \alpha^{ec}$ iff $1\in (\alpha:s)$ for some $s\in S$ iff $s\in \alpha$ for some $s\in S$ iff $\alpha\cap S\neq \emptyset$. 
+- Also
+	- $\alpha^e=S^{-1}A$ yields $(\alpha^e)^c=A$.
+	- $\alpha^{ec}=A$ yields $(\alpha^{ec})^e=A^e=S^{-1}A$. Also note that $(\alpha^e)^{ce}=\alpha^e$ by i) and then $\alpha^e=S^{-1}A$.
+
+iii) Recall that $\alpha\in C$ iff $\alpha=(\alpha^e)^c$, it is a HW. See [[MATH/交换代数/Nodes/HW1#^gec7z6\|Prop.1.17]]. 
+
+By ii), $\alpha^{ec}=\cup_{s\in S}(\alpha:s)$, where $(\alpha:s)\supseteq \alpha$. Hence $\alpha\in C$ iff $\alpha=\alpha^{ec}$ iff $(\alpha:s)=\alpha$ for all $s\in S$ iff $\forall s\in S$, $s$ is not zero divisor in $A/\alpha$. 
+
+iv) **Step 1.** For prime ideal $p$ with $p\cap S=\emptyset$, we show $S^{-1}p$ is prime. Note that $S^{-1}A/S^{-1}p\simeq S^{-1}A/(S^{-1}A\otimes_A p)\simeq S^{-1}A\otimes_A A/p$. It suffices to show $S^{-1}(A/p)$ is an integral domain. 
+
+It is easy to check $S^{-1}(A/p)\simeq \overline S^{-1}(A/p)$ where $\overline S=\mathrm{im}(S\to A/p)$. Note that $P\cap S=\emptyset$ yields that $0\notin \overline S$. 
+
+Since $A/p$ is an integral domain and $\overline S$ is a subset without $0$, one have $\overline S^{-1} (A/p)\subseteq \mathrm{Frac}(A/p)$ and then $S^{-1}(A/p)$ is an integral domain.
+
+**Step 2.** We show the map $p\to S^{-1}p$ is injective map. In fact, $p^{ec}=p$ iff $p\in C$. For any $s\in S$, $s$ is not a zero divisor of $A/p$ because it is an integral domain. By iii), $p\in C$ and then $p^{ec}=p$. 
+
+**Step 3.** We show the above map is surjective. That is, given a prime ideal $\subseteq S^{-1}A$, it is of form $S^{-1}p$. 
+
+By i), for $q\subseteq S^{-1}A$ prime, then $q=q^{ce}$. So it suffices to show $q^c$ is prime in $A$. Recall that for a ring homomorphism $\theta:G\to H$ and prime ideal $\delta\subseteq H$, one have $\theta^{-1}(\delta)\subseteq G$ prime. Indeed, $\theta$ induces a map $\mathrm{Spec}H\to \mathrm{Spec} G$. Now $q^c=f^{-1}(q)$ for $f:A\to S^{-1}A$. 
+
+Finally, note $q^c\cap S=\emptyset$, otherwise $S^{-1}(q^c)=q^{ce}=S^{-1}A$. 
+
+v) This says 
+- $S^{-1}M+S^{-1}N=S^{-1}(M+N)$ as $S^{-1}M=M\otimes S^{-1}A$ and so for $N,M+N$. 
+- $S^{-1}(M\oplus N)=S^{-1}A\otimes_A(M\oplus N)$
+- $S^{-1}(M\cap N)=S^{-1}M\cap S^{-1}N$, whose proof is as follows.
+	- Note that $S^{-1}(M\cap N)=S^{-1}A\otimes _A(M\cap N)$ and $S^{-1}M\cap S^{-1}N=(S^{-1}A\otimes _A M)\cap (S^{-1}A\otimes _AN)$. 
+	- Consider the left exact sequence $0\to M\cap N\stackrel{\iota}{\to} M\oplus N\stackrel{\varphi}{\to} P$ where $\iota(x)=(x,x)$ and $\varphi(m,n)=m-n$. 
+	- Tensor with the flat $A$-module $S^{-1}A$, and there is a exact sequence
+	  
+	  $$0\to( M\cap N)\otimes_A S^{-1}A\stackrel{}{\to} (M\otimes _A S^{-1}A)\oplus (N\otimes_A S^{-1}A)\stackrel{}{\to} P\otimes_A S^{-1}A$$
+	  
+	  Then conclude. 
+- 
+
+
+`\end{proof}`
 
