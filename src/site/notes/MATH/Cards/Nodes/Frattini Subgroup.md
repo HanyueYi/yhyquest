@@ -88,6 +88,9 @@ Assume that $N\lhd G$ is a normal subgroup of $G$ and $G/N$ is elementary abelia
 For the "moreover" part, since $G/\Phi(G)\cong \mathbb{Z}_p^k$ for some $k$, it can be seen as a linear space and it has a basis $\{\overline e_1,\cdots,\overline e_k\}$. Let $\{e_1,\cdots,e_k\}$ be a set of preimage of $G\to G/\Phi(G)$. Then $\left\langle e_1,\cdots,e_k,\Phi(G)\right\rangle=G$ and so $\left\langle e_1,\cdots,e_k\right\rangle =G$ by [[MATH/Cards/Nodes/Frattini Subgroup#^7vww3g\|#^7vww3g]]. 
 `\end{proof}`
 
+
+**Remark.** It is similar as [[MATH/交换代数/Nodes/2 Modules#^w0idub\|Nakayama lemma]]. 
+
 # Preserved by Direct Product
 
 > [!proposition]

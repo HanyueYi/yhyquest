@@ -187,6 +187,8 @@ It is easy to verify that $r(\alpha+\beta)=r(r(\alpha)+r(\beta))$, and it deduce
 `\end{proof}`
 
 
+# Extension and Contraction
+
 > [!definition] 
 > Define a ring homomorphism $f:A\to B$. For an ideal $\alpha\subseteq A$, $f(\alpha)$ is not necessarily an ideal. Define the *extension ideal* as 
 > 
