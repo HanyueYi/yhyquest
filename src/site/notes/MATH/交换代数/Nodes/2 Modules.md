@@ -87,6 +87,8 @@ Let $N=\left\langle x_1,\cdots,x_n\right\rangle_A\subseteq M$. Then the composit
 `\end{proof}`
 
 
+**Remark.** This is quite similar to [[MATH/Cards/Nodes/Frattini Subgroup#^k9gxk1\|Frattini Subgroup#^k9gxk1]]—in fact, the Jacobson radical can be seen as an analogue of the Frattini subgroup, but in the setting of rings instead of groups.
+
 # Exact Sequence
 
 
