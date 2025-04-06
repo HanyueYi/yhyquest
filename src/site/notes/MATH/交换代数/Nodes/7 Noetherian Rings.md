@@ -24,6 +24,8 @@ By [[MATH/交换代数/Nodes/6 Chain Condition#^8ezl57\|6 Chain Condition#^8ezl5
 > [!theorem] Hilbert basis theorem
 > Let $A$ be a Noetherian ring. Then $A[x]$ is also a Noetherian ring. 
 > 
+{ #b4d5c1}
+
 
 `\begin{proof}`
 Let $\alpha\subseteq A[x]$ be an ideal. Let $I=\{\text{leading coefficients of }f(x)\in \alpha\}$. Note that $I$ is an ideal of $A$, and then $I$ is finitely generated, that is, $I=(a_1,\cdots,a_n)A$. For each $i$, let $f_i=a_ix^{r_i}+\text{lower terms}\in \alpha$. Let $r=\max\{r_i\}_{i=1}^n$. Then we get a sub-ideal $\alpha'=(f_1,\cdots,f_n)A[x]\subseteq \alpha$. 
@@ -39,14 +41,14 @@ Let $M=\oplus_{i=1}^{r-1}Ax^i\subseteq A[x]$ be a $A$-submodule. By the decompos
 But now, $M$ is a Noetherian $A$-module and $\alpha \cap M$ is also Noetherian $A$-module. So $\alpha\cap M=(g_1,\cdots,g_m)_A$. It is easy to see $\alpha=(f_1,\cdots,f_n,g_1,\cdots,g_m)_{A[x]}$ and so $\alpha$ is finitely generated. 
 `\end{proof}`
 
-**Remark.** We have proved it [[MATH/抽象代数II/Nodes/2.3 Noetherian Rings and Modules#^75xtmd\|here]]. Similarly, we can prove that if $A$ is Noetherian, then $A[\![x]\!]$ is also Noetherian. The proof is similar, using "lowest term coefficient". 
+**Remark.** We have proved it [[MATH/抽象代数II/Nodes/2.3 Noetherian Rings and Modules#^75xtmd\|here]]. Similarly, we can prove that if $A$ is Noetherian, then $A[\![x]\!]$ is also Noetherian. The proof is similar, using "lowest term coefficient". See [[MATH/交换代数/Nodes/HW6#^elab7i\|here]]. 
 
 
 > [!corollary]
 > If $A$ is Noetherian, then $A[x_1,\cdots,x_n]$ is also Noetherian. 
 
 > [!corollary]
-> Let $B$ be a finitely-generated $A$-algebra. If $A$ is Noetherian, then so is $B$. In particular, every finitely-generated ring, and every finitely generated algebra over a field, is Noetherian.
+> Let $B$ be a finitely generated $A$-algebra. If $A$ is Noetherian, then so is $B$. In particular, every finitely generated ring, and every finitely generated algebra over a field, is Noetherian.
 
 `\begin{proof}`
 There exists surjective map $A[x_1,\cdots,x_n]\twoheadrightarrow B$. 
@@ -67,20 +69,15 @@ $k\subseteq k[x^n]\subseteq k[x]$, $B=k[x^2+x^3,x^4+x^6,\cdots]$
 Write $C=A[x_1,\cdots,x_m]$ with $x_i\in C$, and write $C=\left\langle y_1,\cdots,y_n\right\rangle_B$ as $B$-module with $y_i\in C$. Then 
 
 $$\begin{aligned}
-x_i&=\sum_{j=1}^n b_{ij}y_j,\; b_{ij}\in B\;\;\;(1)\\
-y_iy_j&=\sum_{k=1}^n b_{ijk}y_k \; b_{ijk}\in B\;\;\;(2)
+&x_i=\sum_{j=1}^n b_{ij}y_j,\; b_{ij}\in B\;\;\;(1)\\
+&y_iy_j=\sum_{k=1}^n b_{ijk}y_k, \; b_{ijk}\in B\;\;\;(2)
 \end{aligned}$$
 
 Let $B_0=A[b_{ij},b_{ijk}]\subseteq B$ be a subring, which is a finitely generated $A$-algebra. So now, it suffices to show $B$ is a finitely generated $B_0$-algebra. But in fact, one can show that $B$ is a finitely generated $B_0$-module. 
 
+Indeed, for any $b\in B\subseteq C=A[x_1,\cdots,x_m]$, $B$ is a polynomial in $x_1,\cdots,x_m$ over $A$ and so $b$ is a polynomial in $y_1,\cdots,y_n$ over $B$ by (1). Furthermore, $b$ is a linear combination of $y_1,\cdots,y_n$ over $B_0$ by (2). Remark that $y_j\in C$ NOT in $B$, so they are not a set of generator of $B$ over $B_0$. But the above argument shows $B\subseteq \left\langle y_1,\cdots,y_n\right\rangle_{B_0}\subseteq C$. 
 
-Indeed, for any $b\in B\subseteq C=A[x_1,\cdots,x_m]$, $B$ is a polynomial in $x_1,\cdots,x_m$ over $A$ and so $b$ is a polynomial in $y_1,\cdots,y_n$ over $B$ by (1). Furthermore, $b$ is a linear combination of $y_1,\cdots,y_n$ over $B_0$ by (2). 
-
-Careful: $y_j\in C$ NOT in $B$, so they are not a set of generator of $B$ over $B_0$. But above shows $B\subseteq \left\langle y_1,\cdots,y_n\right\rangle_{B_0}\subseteq C$. 
-
-$A$-Noetherian yields that $B_0$ is Noetherian ring yields that $\left\langle y_1,\cdots,y_n\right\rangle_{B_0}$ is a Noetherian $B_0$-module. So $B$ is a Noetherian $B_0$-module, proving the claim. 
-
-- [ ] 这个证明好像还没重写
+Since $A$ is a Noetherian ring, by [[MATH/交换代数/Nodes/7 Noetherian Rings#^b4d5c1\|#^b4d5c1]], $B_0=A[b_{ij},b_{ijk}]$ is also Noetherian ring. Then it yields that $\left\langle y_1,\cdots,y_n\right\rangle_{B_0}\supseteq B$ is a Noetherian $B_0$-module. So $B$ is a Noetherian $B_0$-module, proving the claim. 
 `\end{proof}`
 
 
@@ -136,10 +133,9 @@ Since $I$ is proper, $I\subseteq m$ for some maximal ideal $m$. By [[MATH/交换
 > 
 > Let $\alpha\subsetneq k[x_1,\cdots,x_n]$ be an ideal. Define $V=\{(a_1,\cdots,a_n)\in k^n:f(a_1,\cdots,a_n)=0,\forall f\in \alpha\}$ as the solution set of $\alpha$. Define $I(V)=\{g\in k[x_1,\cdots,x_n]:g(a_1,\cdots,a_n)=0,\forall (a_1,\cdots,a_n)\in \alpha\}$. Then $I(V)=r(\alpha)$. 
 
-
-
-
-
+`\begin{proof}`
+See [[MATH/交换代数/Nodes/HW6#^oex7wh\|here]]. 
+`\end{proof}`
 
 
 
